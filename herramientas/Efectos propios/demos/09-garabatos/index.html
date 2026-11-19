@@ -1,0 +1,29 @@
+<!doctype html>
+<html data-formato="video" lang="es">
+<head>
+<meta charset="utf-8"><title>Demo 9 Garabatos vivos</title>
+<link rel="stylesheet" href="../../../Tipografia%20audiovisual/sistema/tipografia.css">
+<link rel="stylesheet" href="../../lib/efectos-propios.css">
+<style>
+  body { margin: 0; background: #000; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #bg { position: absolute; inset: 0; background: url(../assets/bgT.jpg) center / cover; }
+</style>
+</head>
+<body>
+<div id="stage"><div id="bg"></div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="../../../Tipografia%20audiovisual/sistema/entradas.js"></script>
+<script src="../../lib/efectos-propios.js"></script>
+<script>
+(async () => {
+  await document.fonts.load('700 100px Caveat'); await document.fonts.ready;
+  const tl = gsap.timeline({ paused: true });
+  // cabeza (con gorra): centro (536, 770), radio ~210, según leer_toma.py
+  EP.garabatos(tl, { t: 0.1, cabeza: { cx: 536, cy: 770, r: 210 } });
+  tl.to({}, { duration: 0.01 }, 3.9);
+  window.TL = tl;
+})();
+</script>
+</body>
+</html>

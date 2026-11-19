@@ -1,0 +1,135 @@
+{
+  "_nota": "Volúmenes = fracción del PICO de la voz (0,10 = -20 dB bajo el pico de la voz). Guía 10: efectos entre 8 % y 16 %; guía 02 (la persona): 6-12 %, solo en algunas palabras clave y nunca uno por cada animación: por eso el tope por minuto es 10 (manda el criterio más conservador). Rango de trabajo: 0,06-0,14. Todo es hipótesis [H] hasta validarlo de oído y con métricas.",
+  "animacion_a_sonido": {
+    "golpe": "impacto",
+    "estampa": "impacto",
+    "suave": "wosh-suave",
+    "rebote": "pop",
+    "escribe": "tap",
+    "fundido": null,
+    "corte": null
+  },
+  "categorias": {
+    "tap": {
+      "vol": 0.07,
+      "uso": "letras o palabras que aparecen una a una; tecleo",
+      "prioridad": 3,
+      "pixabay": [
+        "keyboard typing click single",
+        "typewriter key"
+      ],
+      "max_s": 0.45
+    },
+    "pop": {
+      "vol": 0.09,
+      "uso": "aparición de un gráfico, palabra o sticker; humor",
+      "prioridad": 3,
+      "pixabay": [
+        "pop bubble ui",
+        "pop sound short"
+      ],
+      "max_s": 0.8
+    },
+    "click": {
+      "vol": 0.07,
+      "uso": "interfaz: botón, tarjeta, interruptor",
+      "prioridad": 2,
+      "pixabay": [
+        "ui click soft",
+        "button click"
+      ],
+      "max_s": 0.35
+    },
+    "wosh-suave": {
+      "vol": 0.1,
+      "uso": "deslizamientos y entradas suaves de texto",
+      "prioridad": 3,
+      "pixabay": [
+        "soft whoosh swoosh",
+        "light swish"
+      ],
+      "max_s": 1.6
+    },
+    "whoosh": {
+      "vol": 0.12,
+      "uso": "barridos y movimientos de elementos grandes; transiciones",
+      "prioridad": 4,
+      "pixabay": [
+        "whoosh transition fast",
+        "swoosh cinematic short"
+      ],
+      "max_s": 1.6
+    },
+    "zoom-in": {
+      "vol": 0.11,
+      "uso": "acercamientos de cámara o de cifras",
+      "prioridad": 5,
+      "pixabay": [
+        "zoom in whoosh rise",
+        "camera zoom sound"
+      ],
+      "max_s": 2.2
+    },
+    "impacto": {
+      "vol": 0.14,
+      "uso": "entrada fuerte de una palabra clave o cifra (STRONG)",
+      "prioridad": 6,
+      "pixabay": [
+        "cinematic hit impact short",
+        "boom hit sound effect"
+      ],
+      "max_s": 3
+    },
+    "flash-obturador": {
+      "vol": 0.09,
+      "uso": "transición flash fotográfico entre ideas (guía 10, 11.1)",
+      "prioridad": 5,
+      "pixabay": [
+        "camera shutter click flash",
+        "camera photo shutter"
+      ],
+      "max_s": 1
+    },
+    "contador": {
+      "vol": 0.07,
+      "uso": "contadores que suben (cifras, vistas)",
+      "prioridad": 2,
+      "pixabay": [
+        "counter ticking digital numbers",
+        "number counter rolling"
+      ],
+      "max_s": 2
+    },
+    "riser": {
+      "vol": 0.09,
+      "uso": "subida de tensión antes de una revelación",
+      "prioridad": 4,
+      "pixabay": [
+        "riser short build up",
+        "tension rise sound"
+      ],
+      "max_s": 5
+    },
+    "shine": {
+      "vol": 0.07,
+      "uso": "brillo o logro: un tilde, un resultado",
+      "prioridad": 2,
+      "pixabay": [
+        "shine sparkle chime",
+        "magic sparkle short"
+      ],
+      "max_s": 2.5
+    },
+    "digital-text": {
+      "vol": 0.07,
+      "uso": "texto con estética tecnológica o glitch",
+      "prioridad": 2,
+      "pixabay": [
+        "digital text typing glitch",
+        "computer data beeps short"
+      ],
+      "max_s": 2.5
+    }
+  },
+  "limite_por_minuto": 10
+}

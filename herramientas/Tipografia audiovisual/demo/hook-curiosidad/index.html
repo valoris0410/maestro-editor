@@ -1,0 +1,53 @@
+<!doctype html>
+<html data-formato="video" lang="es">
+<head>
+<meta charset="utf-8">
+<title>Demo hook curiosidad</title>
+<link rel="stylesheet" href="assets/tipografia/tipografia.css">
+<style>
+  /* Decisiones de esta pieza (ficha tipográfica):
+     gatillo = curiosidad · toma = plano medio corto, B/N, camisa blanca → leer_toma.py: hook con trazo+sombra, VOZ en el pecho (y 1056) con trazo+sombra
+     acento = #FFD23F (la escena es B/N: cualquier color vivo sirve) */
+  body { margin: 0; background: #000; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+  #bg { position: absolute; inset: 0; background: url(assets/bg.jpg) center / cover; transform-origin: 50% 35%; }
+  .abs { position: absolute; left: 100px; width: 880px; }
+  .pre { opacity: 0; }                     /* lo que entra después arranca invisible */
+  #h1 { top: 262px; }
+  #h2 { top: 372px; font-size: 140px; }   /* leer_toma.py: ACENTO de hasta 142 px en los 292 px libres sobre la cabeza */
+  #s1, #s2 { top: 1056px; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg"></div>
+  <div id="h1" class="abs golpe t-trazo centrado pre">estás cometiendo</div>
+  <div id="h2" class="abs acento t-trazo centrado pre">error</div>
+  <div id="s1" class="abs voz t-trazo centrado pre">y nadie te lo dijo</div>
+  <div id="s2" class="abs voz t-trazo centrado pre">tu sistema<br>se quedó <span class="acento-en-linea">chico</span></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="assets/tipografia/entradas.js"></script>
+<script>
+  const tl = gsap.timeline({ paused: true });
+  window.TL = tl;
+  tl.fromTo("#bg", { scale: 1 }, { scale: 1.06, duration: 6, ease: "none" }, 0);          // zoom lento continuo
+
+  // HOOK (curiosidad): golpe de Anton primero, el acento llega después
+  TIP.entrada(tl, "#h1", "golpe", 0.30);
+  TIP.entrada(tl, "#h2", "suave", 1.10);
+  TIP.salida(tl, ["#h1", "#h2"], "rapida", 3.60);
+
+  // VOZ 1: palabras que se encienden cuando se dicen
+  tl.set("#s1", { opacity: 1 }, 1.90);
+  TIP.palabras(tl, "#s1", [2.00, 2.20, 2.55, 2.70, 2.95]);
+  TIP.salida(tl, "#s1", "rapida", 3.90);
+
+  // VOZ 2 con una palabra de acento en la misma línea
+  tl.set("#s2", { opacity: 1 }, 4.10);
+  TIP.palabras(tl, "#s2", [4.20, 4.45, 4.85, 5.05, 5.30]);
+  // permanencia mínima comprobada: s1 1,9→3,9 (2,0 s ≥ ${TIP.permanencia("y nadie te lo dijo").toFixed(2)} s) · s2 4,1→6,0 (1,9 s)
+  tl.to({}, { duration: 0.01 }, 6.0);
+</script>
+</body>
+</html>

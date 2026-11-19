@@ -1,0 +1,90 @@
+/* Sistema tipográfico (guía 12). Roles VOZ / GOLPE / ACENTO / DATO + tratamientos de legibilidad.
+   Uso: <link rel="stylesheet" href="tipografia.css"> y <html data-formato="video"> (1080x1920) o <html data-formato="carrusel"> (1080x1350).
+   La marca manda: para cambiar fuentes o colores se redefinen las variables --f-* y --acento-color en un bloque propio. */
+
+@font-face { font-family: "Anton"; src: url("../fuentes/Anton-400.ttf"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../fuentes/Inter-400.ttf"); font-weight: 400; }
+@font-face { font-family: "Inter"; src: url("../fuentes/Inter-500.ttf"); font-weight: 500; }
+@font-face { font-family: "Inter"; src: url("../fuentes/Inter-600.ttf"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("../fuentes/Inter-800.ttf"); font-weight: 800; }
+@font-face { font-family: "Instrument Serif"; src: url("../fuentes/InstrumentSerif-400.ttf"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Instrument Serif"; src: url("../fuentes/InstrumentSerif-400Italic.ttf"); font-weight: 400; font-style: italic; }
+@font-face { font-family: "Playfair Display"; src: url("../fuentes/PlayfairDisplay-700.ttf"); font-weight: 700; font-style: normal; }
+@font-face { font-family: "Playfair Display"; src: url("../fuentes/PlayfairDisplay-700Italic.ttf"); font-weight: 700; font-style: italic; }
+@font-face { font-family: "Montserrat"; src: url("../fuentes/Montserrat-700.ttf"); font-weight: 700; }
+@font-face { font-family: "Montserrat"; src: url("../fuentes/Montserrat-800.ttf"); font-weight: 800; }
+@font-face { font-family: "Poppins"; src: url("../fuentes/Poppins-500.ttf"); font-weight: 500; }
+@font-face { font-family: "Poppins"; src: url("../fuentes/Poppins-800.ttf"); font-weight: 800; }
+@font-face { font-family: "Oswald"; src: url("../fuentes/Oswald-700.ttf"); font-weight: 700; }
+@font-face { font-family: "Archivo"; src: url("../fuentes/Archivo-900.ttf"); font-weight: 900; }
+@font-face { font-family: "Rubik"; src: url("../fuentes/Rubik-900.ttf"); font-weight: 900; }
+@font-face { font-family: "Caveat"; src: url("../fuentes/Caveat-700.ttf"); font-weight: 700; }
+@font-face { font-family: "Dancing Script"; src: url("../fuentes/DancingScript-700.ttf"); font-weight: 700; }
+@font-face { font-family: "JetBrains Mono"; src: url("../fuentes/JetBrainsMono-500.ttf"); font-weight: 500; }
+@font-face { font-family: "JetBrains Mono"; src: url("../fuentes/JetBrainsMono-800.ttf"); font-weight: 800; }
+@font-face { font-family: "Space Grotesk"; src: url("../fuentes/SpaceGrotesk-700.ttf"); font-weight: 700; }
+@font-face { font-family: "Cormorant Garamond"; src: url("../fuentes/CormorantGaramond-500Italic.ttf"); font-weight: 500; font-style: italic; }
+@font-face { font-family: "Permanent Marker"; src: url("../fuentes/PermanentMarker-400.ttf"); font-weight: 400; }
+
+:root {
+  /* Roles por defecto (guía 12, sección 3). Cambiarlos según la marca. */
+  --f-voz: "Inter", sans-serif;
+  --f-golpe: "Anton", sans-serif;
+  --f-acento: "Instrument Serif", serif;   /* siempre en cursiva */
+  --f-dato: "Space Grotesk", sans-serif;
+  --f-etiqueta: "JetBrains Mono", monospace;
+  --peso-voz: 800;
+  --acento-color: #FFD23F;                 /* elegir con leer_toma.py: el color más lejos del tono de la escena */
+  --texto: #FFFFFF;
+
+  /* Tiempos y curvas (sección 7). Los usa entradas.js. */
+  --dur-entrada: .2s; --dur-salida: .1s;
+}
+
+/* ---- Escalas: video 1080x1920 ---- */
+[data-formato="video"] {
+  --t-voz: 76px; --t-voz-min: 56px;
+  --t-golpe: 112px; --t-acento: 190px; --t-dato: 420px; --t-etiqueta: 40px;
+  --interlinea-voz: 1.12;
+}
+/* ---- Escalas: carrusel 1080x1350 (escala 32/43/57/76/101 de la skill /carrusel; cuerpo nunca menor a 28 px) ---- */
+[data-formato="carrusel"] {
+  --t-voz: 38px; --t-voz-min: 28px;
+  --t-golpe: 101px; --t-acento: 101px; --t-dato: 260px; --t-etiqueta: 24px;
+  --interlinea-voz: 1.25;
+}
+
+/* ---- Roles ---- */
+.voz      { font-family: var(--f-voz); font-weight: var(--peso-voz); font-size: var(--t-voz); line-height: var(--interlinea-voz); color: var(--texto); letter-spacing: -.01em; }
+.golpe    { font-family: var(--f-golpe); font-weight: 400; font-size: var(--t-golpe); line-height: .98; text-transform: uppercase; color: var(--texto); }
+.acento   { font-family: var(--f-acento); font-style: italic; font-weight: 400; font-size: var(--t-acento); line-height: 1; color: var(--acento-color); }
+.dato     { font-family: var(--f-dato); font-weight: 700; font-size: var(--t-dato); line-height: 1; letter-spacing: -.04em; font-variant-numeric: lining-nums tabular-nums; color: var(--texto); }
+.etiqueta { font-family: var(--f-etiqueta); font-weight: 800; font-size: var(--t-etiqueta); letter-spacing: .04em; color: var(--acento-color); }
+/* Acento dentro de una línea de VOZ: la cursiva serif necesita ~1,5x para igualar la altura visual */
+.voz .acento-en-linea { font-family: var(--f-acento); font-style: italic; font-weight: 400; font-size: 1.55em; line-height: .8; color: var(--acento-color); }
+
+/* ---- Tratamientos de legibilidad (los recomienda leer_toma.py) ---- */
+.t-sombra { text-shadow: 0 .05em .35em rgba(0,0,0,.4); }
+.t-trazo  { -webkit-text-stroke: .12em rgba(0,0,0,.9); paint-order: stroke fill; text-shadow: 0 .08em .34em rgba(0,0,0,.5); }
+.t-caja   { background: rgba(0,0,0,.6); padding: .18em .5em; border-radius: .35em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.t-glow   { text-shadow: 0 0 .14em var(--acento-color), 0 0 .4em var(--acento-color), 0 0 .8em color-mix(in srgb, var(--acento-color) 60%, transparent); } /* SOLO sobre fondo oscuro */
+
+/* ---- Utilidades ---- */
+.centrado { text-align: center; }
+[data-formato="video"] .zona-segura { position: absolute; left: 60px; top: 260px; width: 880px; height: 1220px; }
+[data-formato="carrusel"] .zona-segura { position: absolute; left: 90px; top: 110px; width: 900px; height: 1130px; }
+.cifras-lineales { font-variant-numeric: lining-nums; }  /* Playfair y Cormorant traen cifras "de texto" por defecto */
+
+/* Subtítulo de relleno de la persona (08-11-2026): fuente SYSTEM de CapCut. Receta: sombra negra opac. 30 / desenfoque 70,
+   brillo blanco intensidad 30 / intervalo 20, espaciado carácter -1 y línea -1. Aproximación CSS [H]: ajustar contra una captura de CapCut. */
+.vz-system { font-family: "Segoe UI", system-ui, -apple-system, "SF Pro Display", Roboto, sans-serif; font-weight: 600;
+  color: #fff; letter-spacing: -0.01em; line-height: 1.1;
+  text-shadow: 0 0.04em 0.22em rgba(0,0,0,.30), 0 0 0.10em rgba(255,255,255,.30); }
+
+/* Fuentes extra (08-11-2026, aportadas por la persona) */
+@font-face { font-family: "Deutschlander"; src: url("../fuentes/Deutschlander.otf"); }
+@font-face { font-family: "Outerion"; src: url("../fuentes/Outerion-Regular.otf"); }
+@font-face { font-family: "Sinethar"; src: url("../fuentes/Sinethar.otf"); }
+@font-face { font-family: "Roundhand"; src: url("../fuentes/Roundhand-Regular.ttf"); font-weight: 400; }
+@font-face { font-family: "Roundhand"; src: url("../fuentes/Roundhand-Bold.ttf"); font-weight: 700; }
+@font-face { font-family: "Sequel Sans Heavy"; src: url("../fuentes/SequelSansHeavyDisplay.ttf"); }

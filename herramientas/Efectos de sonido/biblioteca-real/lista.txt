@@ -1,0 +1,25 @@
+flash-obturador|346101|2025/05/23/audio_c0a76b92b0|CAMERA SHUTTER|ALEXIS_GAMING_CAM
+flash-obturador|199580|2024/04/01/audio_33755565ea|Camera Shutter|Universfield
+flash-obturador|187326|2024/01/21/audio_988f3eadbd|Camera Shutter|VoiceBosch
+tap|22815|2022/03/09/audio_338b6491a6|Typewriter 170428_1482|freesound_community
+tap|6834|2021/08/09/audio_9e34a7dbb9|type writing|freesound_community
+tap|53837|2022/03/13/audio_116e70bc7e|KEYBOARD|freesound_community
+pop|351337|2025/05/29/audio_145c0e7b22|Bubble Pop 06|Universfield
+pop|406640|2025/09/18/audio_37de472eec|Bubble Pop|DRAGON-STUDIO
+click|117076|2022/08/12/audio_21d1ba0130|Mouse Click|Universfield
+click|463065|2026/01/08/audio_96b789e763|ImmersiveControl Button Click Sound|DenielCZ
+wosh-suave|79890|2022/03/15/audio_9d4dab3080|Soft Swishes|freesound_community
+wosh-suave|352756|2025/06/02/audio_87b54dbf23|Thin Swoosh|Universfield
+whoosh|98239|2022/03/20/audio_09125b4dc9|WHOOSH (multiple)|freesound_community
+whoosh|6428|2021/08/04/audio_8b9482e9c9|swoosh|freesound_community
+whoosh|14526|2022/01/18/audio_272b4b1c6d|Short Whoosh, 13x|freesound_community
+zoom-in|125029|2022/11/04/audio_147c1d886f|Zoom sound effect|emircanalp
+zoom-in|14678|2022/01/18/audio_5e02185e26|Whoosh Blow Flutter Short.wav|freesound_community
+impacto|159487|2023/07/24/audio_85286daa97|Cinematic Hit|LordSonny
+impacto|6291|2021/08/04/audio_52ef919abf|Impact|freesound_community
+riser|390311|2025/08/15/audio_98fc9c817c|Riser Swoosh Reverb|DRAGON-STUDIO
+shine|268902|2024/11/26/audio_66b5786bde|Shine 1|BenKirb
+shine|268909|2024/11/26/audio_e16aaa0ea6|Shine 7|BenKirb
+shine|268907|2024/11/26/audio_2133d71af7|Shine 11|BenKirb
+digital-text|226606|2024/07/23/audio_afbd122833|glitch_03|EstudioCoati
+digital-text|162763|2023/08/18/audio_4bf601f1c4|Glitch|ProdJoseph

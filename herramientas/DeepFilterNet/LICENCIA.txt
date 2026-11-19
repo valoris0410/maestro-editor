@@ -1,0 +1,1 @@
+DeepFilterNet v0.5.6 (Hendrik Schröter), doble licencia MIT / Apache-2.0. Origen: https://github.com/Rikorose/DeepFilterNet
